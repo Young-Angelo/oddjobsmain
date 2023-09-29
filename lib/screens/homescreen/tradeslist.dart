@@ -80,20 +80,18 @@ class _TradeListState extends State<TradeList> {
       );
 
       // Include a trade in the filtered list if it is within 20 km
-      return distance < 20000; // 20 km in meters
+      return distance < 10000; // 20 km in meters
     }).toList();
     // Filter trades based on both LatLong and dataToPass
     final filteredTrades = firstfilteredTrades.where((trade) {
-      final bool matchesDataToPass =
-          trade.name.toLowerCase().contains(widget.dataToPass.toLowerCase()) ||
-              trade.description
-                  .toLowerCase()
-                  .contains(widget.dataToPass.toLowerCase());
+      final bool matchesDataToPass = trade.tags.any((tag) =>
+              tag.toLowerCase().contains(widget.dataToPass.toLowerCase())) ||
+          trade.description
+              .toLowerCase()
+              .contains(widget.dataToPass.toLowerCase());
 
-      final bool matchesLatLong = trade.latlong == widget.LatLong;
-
-      // Include a trade in the filtered list if it matches both conditions
-      return matchesDataToPass && matchesLatLong;
+      // Include a trade in the filtered list if it matches the condition
+      return matchesDataToPass;
     }).toList();
 
     try {
