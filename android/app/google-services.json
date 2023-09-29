@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "845226091697",
+    "project_id": "obbjovs",
+    "storage_bucket": "obbjovs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:845226091697:android:b2dca5c7edf12c96822e90",
+        "android_client_info": {
+          "package_name": "com.oddjobz.oddjobs"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNvklTc_RnV_HCs0fW8JCwmI1913nqnIk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
