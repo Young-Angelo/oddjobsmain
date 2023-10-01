@@ -70,6 +70,8 @@ class _TradeListState extends State<TradeList> {
     final firstfilteredTrades = trades.where((trade) {
       final List<String> tradelatLong = trade.latlong.split(",");
       final double lat = double.parse(tradelatLong[0]);
+      print(tradelatLong[0]);
+      print(tradelatLong[1]);
       final double long = double.parse(tradelatLong[1]);
 
       final double distance = Geolocator.distanceBetween(
@@ -80,7 +82,7 @@ class _TradeListState extends State<TradeList> {
       );
 
       // Include a trade in the filtered list if it is within 20 km
-      return distance < 10000; // 20 km in meters
+      return distance < 20000; // 20 km in meters
     }).toList();
     // Filter trades based on both LatLong and dataToPass
     final filteredTrades = firstfilteredTrades.where((trade) {
