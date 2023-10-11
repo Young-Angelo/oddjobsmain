@@ -30,7 +30,7 @@ class _SearchJobState extends State<SearchJob> {
         child: Scaffold(
           appBar: AppBar(
             title: const Text("Search"),
-            actions: <Widget>[
+            /* actions: <Widget>[
               TextButton.icon(
                 onPressed: () async {
                   await _auth.signOut();
@@ -39,7 +39,7 @@ class _SearchJobState extends State<SearchJob> {
                 label: const Text("Logout"),
                 style: TextButton.styleFrom(foregroundColor: Colors.white),
               )
-            ],
+            ], */
           ),
           body: Column(
             children: [

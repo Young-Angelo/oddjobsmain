@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maps_launcher/maps_launcher.dart';
+import 'package:oddjobs/screens/authenticate/tradereg.dart';
 import 'package:oddjobs/screens/homescreen/main_page.dart';
 import 'package:oddjobs/services/auth.dart';
 import 'package:oddjobs/location.dart';
@@ -32,6 +33,23 @@ class _HomeState extends State<Home> {
               // backgroundColor: Colors.brown[400],
               title: const Text("Set Location"),
               actions: <Widget>[
+                TextButton.icon(
+                  onPressed: () {
+                    if (_controller.text.isNotEmpty) {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => TradesmanRegister()),
+                      );
+                    }
+                  },
+                  icon: const Icon(
+                    Icons.handyman,
+                    color: Colors.cyanAccent,
+                  ),
+                  label: const Text("Trades"),
+                  style: TextButton.styleFrom(foregroundColor: Colors.white),
+                ),
                 TextButton.icon(
                   onPressed: () async {
                     await _auth.signOut();
@@ -130,16 +148,18 @@ class _HomeState extends State<Home> {
                   alignment: Alignment.bottomRight,
                   child: IconButton.outlined(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => SearchJob(
-                                  latlong: _controller.text,
-                                )),
-                      );
+                      if (_controller.text.isNotEmpty) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SearchJob(
+                                    latlong: _controller.text,
+                                  )),
+                        );
+                      }
                     },
-                    icon: const Icon(Icons.play_arrow_outlined),
-                    iconSize: 100,
+                    icon: const Icon(Icons.arrow_forward_ios),
+                    iconSize: 70,
                     color: Colors.blue,
                   ),
                 ))

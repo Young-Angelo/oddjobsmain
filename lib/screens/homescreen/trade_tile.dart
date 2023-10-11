@@ -25,12 +25,14 @@ class TradeTile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Description: ${trade.description}'),
-              //   Text(
-              //     'Location: ${trade.latlong}'), // Assuming location is a property in TradesmenModel
               Text(
-                  'Tags: ${trade.tags.join(', ')}'), // Assuming tags is a List<String> in TradesmenModel
+                  'Location: ${trade.location}'), // Assuming location is a property in TradesmenModel
+              Text(
+                'Specialized: ${trade.tags.join(', ')}',
+                style: TextStyle(color: Colors.red),
+              ), // Assuming tags is a List<String> in TradesmenModel
 
-              Text("Phone: ${trade.phone}")
+              Text("Phone: ${trade.phone}"),
             ],
           ),
         ),

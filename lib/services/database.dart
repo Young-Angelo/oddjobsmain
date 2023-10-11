@@ -9,13 +9,14 @@ class DatabaseService {
   DatabaseService({required this.uid});
 
   Future updateUserData(String Name, String About, String Location,
-      List<String> Tags, String LatLong) async {
+      List<String> Tags, String LatLong, String Phone) async {
     return await tradesmenCollection.doc(uid).set({
       'Name': Name,
       'About': About,
       'Location': Location,
       'Tags': Tags,
-      'LatLong': LatLong
+      'LatLong': LatLong,
+      'Phone': Phone,
     });
   }
 
